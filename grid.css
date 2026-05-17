@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: bisque;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    grid-template-areas:"s1 b1 s2" "w1 w1 w1" "m1 m1 s3" "t1 t1 h1";
+    gap:20px;
+    height:calc(100vh-60px);
+    max-width:1200px;
+    margin:0 auto;
+    padding-top: 150px;
+}
+.item{
+    display: grid;
+    text-align: center;
+    background-color: coral;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    color:#443a3a;
+    font-weight:bold;
+    font-size:1.2em
+}
+.item:hover {
+    transform: translateY(5px);
+    background-color: burlywood;
+    color: rgb(92, 49, 49);
+    box-shadow:0 20px 40px rgba(0,0,0,.3)
+}
+
+.s1,.s2,.s3,.h1 {grid-area:var(--a,"s1")} /* Small 1x1 */
+.b1 {grid-area:b1} /* Big 2x1 */
+.w1 {grid-area:w1} /* Wide 3x1 */
+.m1 {grid-area:m1} /* Medium 2x1 */
+.t1 {grid-area:t1} /* Tall 2x1 */
+
